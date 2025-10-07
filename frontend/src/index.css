@@ -1,0 +1,30 @@
+/* index.css */
+
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply a clean font */
+body {
+  font-family: Arial, sans-serif;
+  
+  color: #333;
+  line-height: 1.6;
+  
+  background-color: #f0fff0;
+
+}
+
+/* Links default style */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Simple container style for pages */
+.page-container {
+  padding: 20px;
+}

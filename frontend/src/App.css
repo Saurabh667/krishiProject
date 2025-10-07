@@ -1,0 +1,18 @@
+/* app.css */
+
+/* Push main content right when sidebar is visible */
+.main-content {
+  margin-left: 300px; /* same as sidebar width */
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  /* min-height: 100vh; */
+}
+
+/* For tablets and below */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0;
+    padding: 20px 20px 20px 60px; /* Make space for hamburger menu */
+  }
+}
+

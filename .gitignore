@@ -1,0 +1,10 @@
+env_p/
+.env
+env_p/
+django_backend/uploads/__pycache__/
+# Example .gitignore
+env_p/
+*.env
+__pycache__/
+*.pyc
+node_modules/

@@ -1,0 +1,71 @@
+.container {
+  background-color: #f0fff0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.heading {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.subHeading {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.weatherCard {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.weatherAdvisory {
+  margin-bottom: 20px;
+}
+
+.mainWeather {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.forecast {
+  margin-top: 10px;
+}
+
+.forecastList {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.forecastItem {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.detailsCard {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detailsCard ul {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.detailsCard li {
+  margin-bottom: 8px;
+  color: #333;
+}

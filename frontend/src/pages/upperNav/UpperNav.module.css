@@ -1,0 +1,70 @@
+.upperNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 300px; /* Same as sidebar width */
+  border-bottom: 1px solid #e9ecef;
+  padding: 16px 20px;
+  background-color: #f0fff0;
+  transition: margin-left 0.3s ease;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.upperNav h1 {
+  color: #2c5f2d;
+  font-size: 24px;
+  margin: 0;
+}
+
+.rightSection {
+  display: flex;
+  gap: 12px;
+}
+
+.btnLogin,
+.btnSignup {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.btnLogin {
+  background-color: white;
+  color: #2c5f2d;
+  border: 1px solid #2c5f2d;
+}
+
+.btnLogin:hover {
+  background-color: #e6f4ea;
+}
+
+.btnSignup {
+  background-color: #2c5f2d;
+  color: white;
+  border: 1px solid #2c5f2d;
+}
+
+.btnSignup:hover {
+  background-color: #244b23;
+}
+
+/* For tablets and below */
+@media (max-width: 1024px) {
+  .upperNav {
+    margin-left: 0;
+    padding-left: 60px; /* Make space for hamburger menu */
+  }
+}

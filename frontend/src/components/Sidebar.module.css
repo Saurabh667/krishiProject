@@ -1,0 +1,147 @@
+/* Sidebar.module.css */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  transition: transform 0.3s ease;
+  z-index: 999;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  border-right: 1px solid #e9ecef;
+}
+
+.brandContainer {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 20px;
+  border-bottom: 1px solid #e9ecef;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.brandName {
+ font-size: 22px;
+  font-weight: bold;
+  color: #2c5f2d;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar ul li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 15px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sidebar ul li:hover {
+  background-color: #b0e293;
+  border-radius: 10px;
+}
+
+.sidebar ul li a:hover {
+  font-weight: bold;
+}
+
+/* Hamburger icon - hidden on desktop */
+.menuToggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 1000;
+  color: #333;
+}
+
+.menuToggle:hover {
+  color: green;
+}
+
+.sidebar ul li:first-child {
+  margin-top: -20px;
+}
+
+/* ===================== */
+/* 📱 Responsive Styles  */
+/* ===================== */
+
+/* For tablets and below */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    /* width: 280px; */
+    width: 100%;
+
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+
+  .menuToggle {
+    display: block;
+      top: 18px;   /* increase distance from top */
+    left: 15px;  /* optional: move slightly right */
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
+    margin-left: 30px;
+  }
+
+  .brandName {
+    margin-right: 0; /* remove extra spacing */
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+}
+
+/* For small mobile screens */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar ul li a {
+    font-size: 18px;
+  }
+
+  .menuToggle {
+    font-size: 30px;
+  }
+}
