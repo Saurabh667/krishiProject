@@ -1,72 +1,3 @@
-// import React from "react";
-// import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-// import Navbar from "./components/Navbar";
-// import Dashboard from "./pages/dashboard/Dashboard";
-// import Profile from "./pages/profile/Profile";
-// import Weather from "./pages/weather/Weather";
-// import Advisory from "./pages/advisory/Advisory";
-// import Activity from "./pages/Activity/Activity";
-// import Calendar from "./pages/calendar/Calendar";
-// import Prices from "./pages/prices/Prices";
-// import Chat from "./pages/Chat/Chat";
-// import Benefits from "./pages/benefits/Benefits";
-// import "./app.css";
-// import UpperNav from "./pages/upperNav/UpperNav";
-// import Signup from "./signup";
-// import Login from "./login";
-// import PageNotFound from "./pnf";
-
-// function Layout({ children }) {
-//   const location = useLocation();
-
-//   // Check if we are on login or signup
-//   const authPage = location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/*";
-
-//   return (
-//     <>
-//       {authPage ? (
-//         // ✅ Centered layout for login/signup
-//         <div className="auth-container">
-//           {children}
-//         </div>
-//       ) : (
-//         // ✅ Normal layout with Navbar + UpperNav
-//         <>
-//           <Navbar />
-//           <UpperNav />
-//           <div className="main-content">{children}</div>
-//         </>
-//       )}
-//     </>
-//   );
-// }
-
-// function App() {
-//   return (
-//     <Router>
-//       <Layout>
-//         <Routes>
-//           <Route path="/register" element={<Signup />} />
-//           <Route path="/login" element={<Login />} />
-          
-//           <Route path="/" element={<Dashboard />} />
-//           <Route path="/profile" element={<Profile />} />
-//           <Route path="/weather" element={<Weather />} />
-//           <Route path="/advisory" element={<Advisory />} />
-//           <Route path="/activity" element={<Activity />} />
-//           <Route path="/calendar" element={<Calendar />} />
-//           <Route path="/prices" element={<Prices />} />
-//           <Route path="/chat" element={<Chat />} />
-//           <Route path="/benefits" element={<Benefits />} />
-//           <Route path="*" element={<PageNotFound/>} />
-//         </Routes>
-//       </Layout>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -78,11 +9,12 @@ import Advisory from "./pages/advisory/Advisory";
 import Activity from "./pages/Activity/Activity";
 import Calendar from "./pages/calendar/Calendar";
 import Prices from "./pages/prices/Prices";
-import Chat from "./pages/Chat/Chat";
+import Chat from "./pages/chat/Chat";
 import Benefits from "./pages/benefits/Benefits";
 import Signup from "./signup";
 import Login from "./login";
-
+import Voice from "./pages/chat/voice";
+import UpdateForm from "./pages/updateform/UpdateForm";
 
 import AuthLayout from "./layouts/AuthLayout";
 import MainLayout from "./layouts/MainLayout";
@@ -176,6 +108,14 @@ function App() {
           }
         />
         <Route
+          path="/voice"
+          element={
+            <MainLayout>
+              <Voice />
+            </MainLayout>
+          }
+        />
+        <Route
           path="/benefits"
           element={
             <MainLayout>
@@ -183,8 +123,15 @@ function App() {
             </MainLayout>
           }
         />
+        <Route
+          path="/updateForm"
+          element={
+            <MainLayout>
+              <UpdateForm />
+            </MainLayout>
+          }
+        />
 
-        {/* 404 Page */}
         <Route path="*" element={<PageNotFound/>} />
       </Routes>
     </Router>

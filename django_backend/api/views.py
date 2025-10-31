@@ -9,9 +9,26 @@ import random
 from django.views.decorators.csrf import csrf_exempt
 import os
 
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+from django.conf import settings
+from dotenv import load_dotenv
+load_dotenv()
 
-# Initialize OpenAI client
+tokens = [
+    # os.environ.get("GITHUB_TOKEN_1"),
+    os.environ.get("GITHUB_TOKEN_1"),
+]
+token = random.choice([t for t in tokens if t])
+
+# GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+# API keys (you are hardcoding for now)
+# # tokens = [""]
+# tokens = [""]
+# tokens = [t for t in tokens if t]
+# if not tokens:
+#     raise ValueError("No OpenAI API keys found")
+
+token = random.choice(tokens)
+
 endpoint = "https://models.github.ai/inference"
 model = "openai/gpt-4.1"
 client = OpenAI(base_url=endpoint, api_key=token)

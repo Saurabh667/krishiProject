@@ -1,0 +1,85 @@
+.formDiv{
+    padding: 20px;
+    background-color: rgb(86, 242, 99);
+}
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  /* gap: 1rem; */
+  width: 100%;
+  max-width: 450px;
+  margin: 0rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #2e7d32; /* earthy green */
+  font-weight: 700;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .formDiv {
+    padding: 1.5rem;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    font-size: 0.95rem;
+  }
+}
+
+.animationDiv{
+    padding: 10px;
+    height: 100px;
+}

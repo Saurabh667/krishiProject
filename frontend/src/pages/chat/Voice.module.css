@@ -1,0 +1,251 @@
+/* Voice Assistant Container */
+.voiceContainer {
+  text-align: center;
+  padding: 2rem;
+  background: #f0fff4; /* very light green background */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin: 2rem auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Status Indicator */
+.status {
+  font-size: 1.1rem;
+  color: #4b6e57; /* darker green */
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Mic Button */
+.micButton {
+  background-color: #4caf50; /* green */
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.micButton:hover {
+  background-color: #3e8e41;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Spoken Text / Command Display */
+.text {
+  margin-top: 1rem;
+  color: #1e3d23; /* dark green */
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: pre-wrap; /* preserves newlines */
+  background: #e0f7e9; /* light green background */
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.08);
+  text-align: left;
+  line-height: 1.5;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+}
+
+/* Reply Box Styling */
+.replyBox {
+  background-color: #d9f2d9; /* soft green */
+  color: #1b3a1b;
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  max-width: 650px;
+  margin: 12px auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  text-align: left;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Reply Bubble Arrow */
+.replyBox::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -12px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 12px solid #d9f2d9;
+}
+
+/* Reply Hover Effect */
+.replyBox:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* User Message Bubble */
+.userMessage {
+  background-color: #f0fff4; /* light greenish for user */
+  color: #1b3a1b;
+  padding: 14px 18px;
+  border-radius: 16px;
+  max-width: 650px;
+  margin: 12px ;
+  margin-left: 50%;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  text-align: right;
+  position: relative;
+}
+
+/* User Bubble Arrow */
+.userMessage::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -12px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid #f0fff4;
+}
+.chatHistory {
+  background: linear-gradient(145deg, #e6f8e6, #f4fff4); /* soft light-green gradient */
+  border: 1px solid #c8e6c9; /* subtle border */
+  border-radius: 16px;
+  padding: 20px;
+  /* max-width: 700px; */
+  margin: 20px 20px;
+  height: 70vh; 
+  flex-direction: column-reverse;
+  overflow-y: auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Optional hover effect */
+.chatHistory:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Scrollbar styling (optional) */
+.chatHistory::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chatHistory::-webkit-scrollbar-thumb {
+  background: #81c784; /* medium green */
+  border-radius: 10px;
+}
+
+.chatHistory::-webkit-scrollbar-thumb:hover {
+  background: #66bb6a; /* darker on hover */
+}
+
+/* For message alignment consistency */
+.chatHistory p {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #2e7d32;
+  font-size: 1rem;
+}
+
+
+
+/* 🎙️ Voice & History Button */
+.historyBtn {
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  /* display: flex; */
+  margin-right: 20px;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(67, 160, 71, 0.3);
+}
+
+.historyBtn:hover {
+  background: linear-gradient(135deg, #66bb6a, #388e3c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(67, 160, 71, 0.35);
+}
+
+.historyBtn:active {
+  transform: translateY(1px);
+}
+
+/* 💬 Chat Button */
+.chatBtn {
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+}
+
+.chatBtn:hover {
+  background: linear-gradient(135deg, #42a5f5, #1976d2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(33, 150, 243, 0.4);
+}
+
+.chatBtn:active {
+  transform: translateY(1px);
+}
+
+/* Remove link underline & inherit color inside chatBtn */
+.chatBtn a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* 🔇 Mute Button (Light Theme) */
+.muteBtn {
+  background: #f1f8e9;
+  color: #2e7d32;
+  border: 1.5px solid #a5d6a7;
+  border-radius: 50%;
+  /* padding: 10px 24px; */
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 6px rgba(76, 175, 80, 0.1);
+}
+
+.muteBtn:hover {
+  background: #e8f5e9;
+  color: #1b5e20;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.15);
+}
+
+.muteBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(76, 175, 80, 0.15);
+}

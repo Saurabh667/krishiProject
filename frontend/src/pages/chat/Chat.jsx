@@ -1,8 +1,8 @@
 
-
 import React, { useEffect, useRef } from "react";
 import styles from "./Chat.module.css";
 import api from "../../api/api";
+import { Link } from 'react-router-dom';
 
 const Chat = () => {
   const [userInput, setUserInput] = React.useState("");
@@ -16,7 +16,7 @@ const Chat = () => {
     }
   }, [messages]);
   useEffect(() => {
-  setMessages([]); 
+    setMessages([]);
   }, []);
 
   // Fetch messages on component mount
@@ -46,12 +46,12 @@ const Chat = () => {
     // if (userInput.trim() === "") return;
     if (trimmedInput === "") return;
     if (trimmedInput.toLowerCase() === "clear") {
-    setMessages([]);
-    setUserInput("");
-    setLoading(false)
-    return;
+      setMessages([]);
+      setUserInput("");
+      setLoading(false)
+      return;
     }
-    
+
 
     try {
       const res = await api.post("messages/", {
@@ -63,22 +63,19 @@ const Chat = () => {
       //   setUserInput("");
       // } 
       if (res.data && res.data.text) {
-      setMessages((prev) => [...prev, res.data]);
-      setUserInput("");
-
-      // 2️⃣ ✅ CHANGED: call ChatGPT API endpoint
-      try {
-        const gptRes = await api.post("chatgpt/", { text: userInput });
-        if (gptRes.data && gptRes.data.text) {
-          // ✅ CHANGED: append GPT reply to messages
-          setMessages((prev) => [...prev, gptRes.data]);
+        setMessages((prev) => [...prev, res.data]);
+        setUserInput("");
+        try {
+          const gptRes = await api.post("chatgpt/", { text: userInput });
+          if (gptRes.data && gptRes.data.text) {
+            setMessages((prev) => [...prev, gptRes.data]);
+          }
+        } catch (err) {
+          console.error("Failed to get ChatGPT reply:", err);
+          console.log(err.response?.data);
         }
-      } catch (err) {
-        console.error("Failed to get ChatGPT reply:", err);
-        console.log(err.response?.data);
-      }
 
-    }
+      }
       else {
         console.error("Invalid message returned from API:", res.data);
         console.log(res.data);
@@ -87,7 +84,7 @@ const Chat = () => {
       console.error("Failed to send message:", err);
       console.log(err.response?.data);
     }
-    finally{
+    finally {
       setLoading(false)
     }
   };
@@ -95,6 +92,7 @@ const Chat = () => {
   return (
     <>
       <h1>Chat Page</h1>
+
       <div className={styles.chatArea}>
         <div className={styles.displayArea}>
           <div className={styles.messageContainer}>
@@ -104,10 +102,18 @@ const Chat = () => {
                   key={msg.id ?? idx}
                   ref={idx === messages.length - 1 ? lastMessageRef : null}
                   className={msg.sender === "chatgpt"
-                      ? styles.chatgptMessage
-                      : styles.message}
+                    ? styles.chatgptMessage
+                    : styles.message}
                 >
-                  <div className={styles.messageText}>{msg.text}</div>
+                  {/* <div className={styles.messageText} >{msg.text}</div> */}
+                  <div
+                    className={styles.messageText}
+                    dangerouslySetInnerHTML={{
+                      __html: msg.text
+                        .replace(/\n/g, "<br>")
+                        .replace(/```(.*?)```/gs, "<pre><code>$1</code></pre>")
+                    }}
+                  ></div>
                   <div className={styles.messageMeta}>
                     {msg.sender} •{" "}
                     {msg.created_at
@@ -116,7 +122,9 @@ const Chat = () => {
                   </div>
                 </div>
               ) : null
+
             )}
+
           </div>
         </div>
 
@@ -130,16 +138,25 @@ const Chat = () => {
               onChange={(e) => setUserInput(e.target.value)}
             />
             {
-              loading?(
+              loading ? (
                 <div className={styles.loading} disabled>Loading...</div>
-              ):(
-                            <button type="submit" className={styles.senBtn}>
-              Send
-            </button>
+              ) : (
+                <>
+                <button type="submit" className={styles.senBtn}>
+                  Send
+                </button>
+                <Link to='/voice'><button className={styles.senBtn} >
+                  Voice
+                </button>
+                </Link>
+                
+                </>
               )
             }
             {/* <button type="submit" className={styles.senBtn}>Send</button> */}
+
           </form>
+
         </div>
       </div>
     </>

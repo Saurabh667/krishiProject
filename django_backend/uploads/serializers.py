@@ -7,7 +7,6 @@ class PhotoSerializer(serializers.ModelSerializer):
         fields = ['id', 'image', 'uploaded_at','description']
     
     def validate_image(self, value):
-        # Add any custom validation for the image field here
-        if value.size > 5 * 1024 * 1024:  # Limit file size to 5MB
+        if value.size > 5 * 1024 * 1024:  
             raise serializers.ValidationError("Image size should not exceed 5MB.")
         return value

@@ -1,4 +1,4 @@
-.container {
+/* .container {
   padding: 2rem;
   background-color: #f0fff0;
 }
@@ -75,7 +75,7 @@
   font-weight: 600;
 }
 
-/* ✅ Responsive table */
+/* ✅ Responsive table 
 @media (max-width: 768px) {
   .table th,
   .table td {
@@ -90,5 +90,171 @@
   }
   .table {
     min-width: 500px;
+  }
+} */
+
+
+
+
+/* 🌿 Page Wrapper */
+.wrapper {
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f0fff4 0%, #e6f7ff 100%);
+  font-family: "Inter", sans-serif;
+  color: #1b4332;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* 🌾 Headings */
+.heading {
+  font-size: 2.3rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #2d6a4f, #52b788);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.subHeading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #52796f;
+  margin-bottom: 2rem;
+}
+
+/* 💎 Table Card (Glassmorphism) */
+.tableCard {
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: all 0.4s ease;
+}
+
+.tableCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 128, 0, 0.1);
+}
+
+/* Header Text */
+.tableHeader h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1b4332;
+  margin-bottom: 0.2rem;
+}
+
+.tableHeader p {
+  font-size: 0.95rem;
+  color: #6b9080;
+  margin-bottom: 1rem;
+}
+
+/* 📊 Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table th {
+  background: #ecfdf5;
+  color: #1b4332;
+  text-align: left;
+  padding: 1rem;
+  font-weight: 700;
+  border-bottom: 2px solid #d8f3dc;
+  font-size: 1rem;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e6f4ea;
+  color: #2f3e46;
+  transition: background 0.3s ease;
+}
+
+.row:hover td {
+  background: #f1fdf4;
+}
+
+/* 💰 Price Column */
+.price {
+  font-weight: 600;
+  color: #1b4332;
+}
+
+/* 📈 Change Indicators */
+.positive {
+  color: #1b9c5f;
+  font-weight: 700;
+  animation: pulseGreen 1.5s infinite alternate;
+}
+
+.negative {
+  color: #d62828;
+  font-weight: 700;
+  animation: pulseRed 1.5s infinite alternate;
+}
+
+/* 🌍 Responsive */
+@media (max-width: 768px) {
+  .tableCard {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .heading {
+    font-size: 1.9rem;
+  }
+  .table th,
+  .table td {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ✨ Animations */
+@keyframes pulseGreen {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes pulseRed {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

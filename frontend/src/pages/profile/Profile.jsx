@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Profile.module.css";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   return (
@@ -14,7 +15,7 @@ const Profile = () => {
           alt="Crop Example"
           className={styles.image}
         />
-        <button className={styles.button}>Upload Photo</button>
+        <button className={styles.button}><Link to="/advisory">Upload Photo</Link></button>
         <p className={styles.example}>
           Example Result: Leaf spot disease detected – Apply fungicide.
         </p>
@@ -35,7 +36,7 @@ const Profile = () => {
         </div>
 
         <div className={styles.profileDetails}>
-          <p><strong>Name:</strong> Anuj Sharma</p>
+          <p><strong>Name:</strong> Anu Sharma</p>
           <p><strong>Location:</strong> Kerala, India</p>
           <p><strong>Land Size:</strong> 5 Acres</p>
           <p><strong>Main Crop:</strong> Paddy</p>
@@ -43,7 +44,7 @@ const Profile = () => {
           <p><strong>Irrigation:</strong> Drip Irrigation</p>
           <p><strong>Experience:</strong> 12 Years</p>
           <p><strong>Phone:</strong> +91-9876543210</p>
-          <p><strong>Email:</strong> anuj.sharma@example.com</p>
+          <p><strong>Email:</strong> anu.sharma@gmail.com</p>
         </div>
 
         {/* Farmer Badges */}
@@ -52,6 +53,7 @@ const Profile = () => {
           <span className={styles.badge}>💧 Smart Irrigation</span>
           <span className={styles.badge}>🚜 Modern Equipment</span>
         </div>
+        <div className={styles.updateBtn}><button className={styles.button}><Link to="/updateForm">Update Profile</Link></button></div>
       </div>
 
       {/* Previous Crop Yield */}
