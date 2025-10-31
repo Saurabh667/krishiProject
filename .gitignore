@@ -1,11 +1,28 @@
-env_p/
-.env
-env_p/
-django_backend/uploads/__pycache__/
-# Example .gitignore
+# env_p/
+# .env
+# env_p/
+# django_backend/uploads/__pycache__/
+# # Example .gitignore
+# env_p/
+# *.env
+# __pycache__/
+# *.pyc
+# node_modules/
+# weather.jsx/
+
+# Ignore environment files/folders
 env_p/
 *.env
+
+# Ignore Python cache files
 __pycache__/
 *.pyc
+
+# Ignore Node modules
 node_modules/
+
+# Ignore frontend specific files
 weather.jsx/
+
+# Allow Django backend code
+!django_backend/
